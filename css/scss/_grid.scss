@@ -8,33 +8,118 @@ $s-device: 480px;
     box-sizing: border-box;
 }
 
-
 @mixin d($size) {
 
     @if $size == l {
         @media screen and (min-width: $l-device) {
-            @content
+            @content;
         }
     } @else if $size == m {
         @media screen and (min-width: $m-device) and (max-width: $l-device - 1){
-            @content
+            @content;
         }
     } @else if $size == s {
         @media screen and (max-width: $m-device - 1) {
-            @content
+            @content;
         }
     }
 }
 
+@function grid($col, $offset: false) {
+    $width: $col / $cols * 100 + '%';
+    $result: calc(#{$width} - #{$gutter});
 
-p{
-    color: blue;
-    @include d(m) {
-        color: pink;
+    @if $offset == offset {
+        $gutter: $gutter / 2;
+        $result: calc(#{$width} + #{$gutter});
     }
 
-    @include d(s) {
-        color: rebeccapurple;
+    @return $result;
+
+}
+
+@for $i from 1 through $cols {
+    .grid-#{$i} {
+      width: grid($i);  
     }
 }
 
+@mixin  grid-structure {
+    float: left;
+    min-height: 1px;
+    margin-left: $gutter / 2;
+    margin-right: $gutter / 2;
+    @include d(s) {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+[class^="grid-"] {
+    @include grid-structure;
+}
+
+@for $i from 1 through $cols {
+    .offset-#{$i} {
+      margin-left: grid($i, offset);  
+      @extend %offset;
+    }
+}
+
+@include d(s) {
+    %offset {
+        margin-left: 0px;
+    }
+}
+
+@mixin clearfix {
+    &::after, &::before {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin container {
+    max-width: $l-device;
+    margin: 0px auto;
+    position: relative;
+
+    @include d(m) {
+        max-width: $m-device;
+    }
+
+    @include d(s){
+        max-width: $s-device;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    @include clearfix;
+}
+
+@mixin row {
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+    @include d(s){
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    @include clearfix;
+}
+
+.container{
+    @include container;
+}
+
+.row {
+    @include row;
+}
+
+div {
+    background: rgba(0, 0, 0, .5);
+    min-height: 50px !important;
+}
