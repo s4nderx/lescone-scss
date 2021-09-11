@@ -12,7 +12,7 @@ img {
     max-width: 100%;
 }
 
-.titulo {
+.title {
     @include tipo-1(18);
     text-transform: uppercase;
     @include d(s) {
@@ -26,13 +26,13 @@ img {
         float: right;
         height: 2px;
         background: $cinza;
-        margin-top: 7px;
+        margin-top: 15px;
         @include d(m) {
             width: 60%;
         }
     }
 }
 
-p{
+p {
     @include tipo-1(18);
 }

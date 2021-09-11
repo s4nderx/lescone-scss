@@ -2,7 +2,7 @@
 $bege-claro: #edece4;
 $bege-medio: #cbc6b9;
 $bege-escuro: #988c77;
-$verde: #988c77;
+$verde: #1ab912;
 $cinza: #2a2426;
 
 // fontes
@@ -10,13 +10,14 @@ $fonte-1: 'PT Mono', monospace;
 $fonte-2: 'Aref Ruqaa', serif;
 
 @function em($pixel, $context: 16) {
-    @return $pixel / $context + "em";
+    @return $pixel / $context + em;
 }
 
 @mixin tipo-1 ($size) {
     font-family: $fonte-1;
     @if $size == 18 {
         font-size: em(18);
+        font-weight: 600;
         line-height: em(30, 18);
     }
 }
