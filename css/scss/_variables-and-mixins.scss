@@ -1,20 +1,20 @@
 // cores
-$bege-claro: #edece4;
-$bege-medio: #cbc6b9;
-$bege-escuro: #988c77;
-$verde: #1ab912;
-$cinza: #2a2426;
+$beige-light: #edece4;
+$beige: #cbc6b9;
+$beige-dark: #988c77;
+$green: #1ab912;
+$grey: #2a2426;
 
-// fontes
-$fonte-1: 'PT Mono', monospace;
-$fonte-2: 'Aref Ruqaa', serif;
+// fonts
+$font-1: 'PT Mono', monospace;
+$font-2: 'Aref Ruqaa', serif;
 
 @function em($pixel, $context: 16) {
     @return $pixel / $context + em;
 }
 
-@mixin tipo-1 ($size) {
-    font-family: $fonte-1;
+@mixin type-1 ($size) {
+    font-family: $font-1;
     @if $size == 18 {
         font-size: em(18);
         font-weight: 600;
@@ -22,8 +22,8 @@ $fonte-2: 'Aref Ruqaa', serif;
     }
 }
 
-@mixin tipo-2 {
-    font-family: $fonte-2;
+@mixin type-2 ($size) {
+    font-family: $font-2;
     @if $size == 18 {
         font-size: em(18);
         line-height: em(30, 18);

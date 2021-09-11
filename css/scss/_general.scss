@@ -1,7 +1,7 @@
 body {
-    background: $bege-claro;
-    border: 10px solid $bege-medio;
-    color: $cinza;
+    background: $beige-light;
+    border: 10px solid $beige;
+    color: $grey;
     @include d(s) {
         border: none;
     }
@@ -13,7 +13,7 @@ img {
 }
 
 .title {
-    @include tipo-1(18);
+    @include type-1(18);
     text-transform: uppercase;
     @include d(s) {
         margin-bottom: 40px;
@@ -25,7 +25,7 @@ img {
         width: 75%;
         float: right;
         height: 2px;
-        background: $cinza;
+        background: $grey;
         margin-top: 15px;
         @include d(m) {
             width: 60%;
@@ -34,5 +34,5 @@ img {
 }
 
 p {
-    @include tipo-1(18);
+    @include type-1(18);
 }

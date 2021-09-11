@@ -6,7 +6,7 @@
     }
 
     &-info {
-        border-right: 2px solid $cinza;
+        border-right: 2px solid $grey;
         max-width: 320px;
     
         p {
@@ -14,13 +14,13 @@
         }
     
         p:first-child {
-            border-bottom: 2px solid $cinza;
+            border-bottom: 2px solid $grey;
             padding-bottom: 10px;
         }
     }
 
     &-phone{
-        color: $bege-escuro;
+        color: $beige-dark;
         @include d(s){
             margin-bottom: 40px;
         }
@@ -31,7 +31,7 @@
             margin-top: 200px;
             font-size: 220px;
             letter-spacing: -80px;
-            color: $cinza;
+            color: $grey;
 
             @include d(m) {
                 margin-top: 80px;
@@ -46,7 +46,7 @@
     }
 
     &-photo {
-       border: 10px solid $bege-medio;
+       border: 10px solid $beige;
        width: 100%;
     }
     
@@ -56,7 +56,7 @@
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: $verde;
+    background: $green;
     border-radius: 50%;
     margin-left: 30px;
 }
