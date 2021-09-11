@@ -33,3 +33,18 @@ $font-2: 'Aref Ruqaa', serif;
         line-height: em(30, 24);
     }
 }
+
+@mixin session {
+    margin-top: 120px;
+    margin-bottom: 60px;
+    @include d(s) {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadows: $shadow;
+    box-shadow: $shadow;
+}

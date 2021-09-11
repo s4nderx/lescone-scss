@@ -1,0 +1,70 @@
+.contact {
+
+    @include session();
+
+    form {
+        label {
+            @include type-1(18);
+            display: block;
+        }
+
+        input[type="text"], textarea {
+            @include type-1(18);
+            color: $grey;
+            width: 100%;
+            padding: 0 5px;
+            height: 40px;
+            border: 2px solid $beige-dark;
+            background: transparent;
+            margin-bottom: 1em;
+            &:hover, &:focus {
+                outline: none;
+                border-color: $beige;
+            }
+        }
+
+        textarea{
+            height: 120px;
+        }
+    }
+
+    
+    &-info {
+        display: inline-block;
+        color: $beige-dark;
+        margin-top: 2em;
+        margin-bottom: 3em;
+        @include d(l){
+            float: right;
+            text-align: right;
+            margin-top: -3em;
+        }
+    }
+
+    &-map {
+        display: block;
+        @include box-shadow(0 0 0 10px $beige);
+        clear: both;
+        img {
+            width: 100%;
+        }
+    }
+
+}
+
+input.button{
+    @include type-1(18);
+    cursor: pointer;
+    color: $beige-dark;
+    text-transform: uppercase;
+    border: 2px solid $beige-dark;
+    background: transparent;
+    display: block;
+    width: 200px;
+    padding-top: 5px;
+    @include box-shadow(5px 5px 0 -2px $beige, 5px 5px 0 0 $beige-dark);
+    transition: .3s;
+    &:hover {
+        @include box-shadow(3px 3px 0 -2px $beige, 3px 3px 0 0 $beige-dark);
+    }
+}
